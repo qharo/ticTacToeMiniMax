@@ -9,17 +9,6 @@ for(i=0;i<9;i++){
 }
 let originalBlocks = [...blocks], originalBlox = [...blox]
 
-function reset(){
-    // blocks = originalBlocks
-    // blox = originalBlox
-    // console.log(blox)
-    // for(let x in blocks){
-    //     blocks[x].innerHTML = ' ';
-    //     blocks[x].disabled = false;
-    // }
-    location.reload()
-}
-
 
 //DECIDING WHO GETS O AND X
 let user, comp, turn;
@@ -36,26 +25,26 @@ else{
 info = document.getElementById('info')
 info.innerHTML = `User is ${user}, and AI is ${comp}`
 //TURN TRUE MEANS COMP PLAYS FIRST, FALSE MEANS USER DOES
-// toss = Math.floor(Math.random()*10)%2
-// if(toss){
-//     turn  = true;
-// }
-// else turn = false;
+toss = Math.floor(Math.random()*10)%2
+if(toss){
+    turn  = true;
+}
+else turn = false;
 
 
-// //ACTUAL GAMEPLAY
-// if(turn){
-//     console.log("Computer begins first!")
-//     let x, y;
-//     [x,y] = minimax(blocks, true)[1]
-//     blocks[x][y].innerHTML == comp
-// }
+//ACTUAL GAMEPLAY
+if(turn){
+    console.log("Computer begins first!")
+    m = minimax(blox, true)[0]
+    blox[m] = comp
+    write(blox)
+}
 
 function write(blox){
     for(let x in blox){
         blocks[x].innerHTML = blox[x]
-        // if(blox[x] === user || blox[x] === comp)
-        //     blocks[x].disabled = 'true'
+        if(blox[x] === user || blox[x] === comp)
+            blocks[x].disabled = 'true'
         // else
         //     blocks[x].disabled = 'false'
     }
