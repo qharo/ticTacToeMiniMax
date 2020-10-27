@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Tic-Tac-Toe - MiniMax Algorithm!
+        </title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="env">
+            <button id="0" onclick="userInput(0)"></button>
+            <button id="1" onclick="userInput(1)"></button>
+            <button id="2" onclick="userInput(2)"></button>
+            <button id="3" onclick="userInput(3)"></button>
+            <button id="4" onclick="userInput(4)"></button>
+            <button id="5" onclick="userInput(5)"></button>
+            <button id="6" onclick="userInput(6)"></button>
+            <button id="7" onclick="userInput(7)"></button>
+            <button id="8" onclick="userInput(8)"></button>
+        </div>
+        <div class="key">
+            This is an implementation of tic-tac-toe using the MiniMax Algorithm. 
+            The board grows green when the AI wins, grey if you tie and red if you, the user, manage to win
+        </div>
+        <div id="info"></div>
+        <button id = "reset" onclick="reset()">RESET</button>
+        <script src="index.js"></script>
+    </body>
+</html>
