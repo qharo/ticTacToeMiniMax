@@ -52,19 +52,20 @@ function write(blox){
 
 
 function userInput(x){
-    console.log("comes here")
-    blox[x] = user;
-    write(blox)
-    if(checkResult(blox) === 0.5){
-        m = minimax(blox, true)[0]
-        blox[m] = comp
+    if(blox[x] !== user && blox[x]!== comp){
+        blox[x] = user;
         write(blox)
-        if(checkResult(blox) != 0.5){
-            stop(checkResult(blox))
+        if(checkResult(blox) === 0.5){
+            m = minimax(blox, true)[0]
+            blox[m] = comp
+            write(blox)
+            if(checkResult(blox) != 0.5){
+                stop(checkResult(blox))
+            }
         }
+        else
+            stop(checkResult(blox, user))
     }
-    else
-        stop(checkResult(blox, user))
 }
 
 
